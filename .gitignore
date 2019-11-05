@@ -1,0 +1,14 @@
+#ide
+.idea
+
+# dependencies
+node_modules
+
+#build
+lib
+
+# misc
+.DS_Store
+.env.local
+.env.*.local
+*.log*
