@@ -1,57 +1,47 @@
 {
   "name": "@zanomate/design",
   "version": "0.1.0",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "files": [
     "package.json",
-    "dist"
+    "lib"
   ],
+  "scripts": {
+    "build": "webpack --config .webpack/config.js",
+    "dts": "tsc -p tsconfig.json --emitDeclarationOnly",
+    "bundle": "npm run build && npm run dts",
+    "storybook": "start-storybook -p 9009"
+  },
   "peerDependencies": {
     "moment": "^2.24.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "styled-components": "^4.4.1"
   },
   "dependencies": {
     "moment": "^2.24.0",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
-  },
-  "scripts": {
-    "story": "start-storybook -p 9009",
-    "build": "webpack --config .webpack/config.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/polyfill": "latest",
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "@babel/preset-typescript": "^7.7.0",
     "@storybook/react": "^5.1.11",
     "@types/styled-components": "^4.1.20",
-    "@zanomate/eslint-config": "^0.4.6",
+    "@zanomate/eslint-config": "^0.4.8",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "eslint": "^6.2.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-loader": "^3.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
     "object-assign": "^4.1.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "promise": "^8.0.3",
-    "react-codemod": "^5.0.5",
-    "react-dev-utils": "^9.0.3",
-    "react-scripts": "3.1.1",
     "style-loader": "^1.0.0",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.6.4",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-cli": "^3.3.10",
+    "whatwg-fetch": "latest",
+    "typescript": "^3.7.2"
   }
 }

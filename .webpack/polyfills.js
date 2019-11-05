@@ -1,4 +1,4 @@
-// require('@babel/polyfill') // Removed because already included in Milkman Tracking Page
+require('@babel/polyfill')
 require('whatwg-fetch');
 const rejectionTracking = require('promise/lib/rejection-tracking')
 const es6Extensions = require('promise/lib/es6-extensions')

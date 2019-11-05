@@ -1,4 +1,7 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "extends": "@zanomate"
 }

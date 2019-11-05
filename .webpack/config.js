@@ -26,10 +26,10 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: outDir,
-    filename: 'design.js'
-    // library: libraryName,
-    // libraryTarget: 'umd',
-    // umdNamedDefine: true
+    filename: 'index.js',
+    library: libraryName,
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   resolve: {
     // modules: ['node_modules'],
@@ -42,10 +42,6 @@ module.exports = {
         test: /\.(ts|js)x?$/,
         use: 'babel-loader'
       },
-      // {
-      //   test: /\.tsx?$/,
-      //   loader: 'ts-loader'
-      // },
       {
         test: /\.css$/,
         use: [
