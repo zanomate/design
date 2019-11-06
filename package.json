@@ -1,24 +1,27 @@
 {
   "name": "@zanomate/design",
   "version": "0.1.0",
-  "main": "lib/index.js",
+  "author": "Matteo Zanoncello",
+  "license": "ISC",
+  "main": "lib/design.js",
+  "module": "lib/design.module.js",
+  "types": "lib/types",
   "files": [
+    "lib",
     "package.json",
-    "lib"
+    "README.md"
   ],
   "scripts": {
-    "build": "webpack --config .webpack/config.js",
-    "dts": "tsc -p tsconfig.json --emitDeclarationOnly",
-    "bundle": "npm run build && npm run dts",
+    "clean": "rimraf lib",
+    "rollup": "rollup -c",
+    "build": "npm run clean && npm run rollup",
     "storybook": "start-storybook -p 9009"
   },
   "peerDependencies": {
-    "moment": "^2.24.0",
     "react": "^16.10.2",
     "styled-components": "^4.4.1"
   },
   "dependencies": {
-    "moment": "^2.24.0",
     "react": "^16.10.2",
     "styled-components": "^4.4.1"
   },
@@ -29,19 +32,15 @@
     "@babel/preset-typescript": "^7.7.0",
     "@storybook/react": "^5.1.11",
     "@types/styled-components": "^4.1.20",
-    "@zanomate/eslint-config": "^0.4.8",
-    "autoprefixer": "^9.6.1",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "eslint": "^6.2.2",
-    "object-assign": "^4.1.1",
-    "postcss-flexbugs-fixes": "^4.1.0",
-    "postcss-loader": "^3.0.0",
-    "promise": "^8.0.3",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.10",
-    "whatwg-fetch": "latest",
+    "@typescript-eslint/parser": "^2.6.1",
+    "@zanomate/eslint-config": "^0.4.9",
+    "eslint": "^6.6.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.26.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript2": "^0.25.2",
     "typescript": "^3.7.2"
   }
 }
