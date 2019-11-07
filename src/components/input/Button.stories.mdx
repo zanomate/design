@@ -1,5 +1,5 @@
 import { Story, Meta, Preview } from '@storybook/addon-docs/blocks'
-import { select } from '@storybook/addon-knobs'
+import { color } from '@storybook/addon-knobs'
 import Button from './Button'
 
 <Meta title="Components|Button" component={Button} />
@@ -9,7 +9,7 @@ import Button from './Button'
 Basic
 
 <Story name="Basic">
-  <Button background={select('background', ['red', 'green'], 'red', 'Main')}>
+  <Button background={color('background', 'red', 'Main')}>
     Click Me
   </Button>
 </Story>
