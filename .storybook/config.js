@@ -14,24 +14,9 @@ addParameters({
   }
 })
 
-// const loaderFn = () => {
-//   require('./style/index.css')
-//
-//   const assets = require.context('./assets', true)
-//   assets.keys().map(name => assets(name))
-//
-//   const components = require.context('../src/components', true, /\.stories\.mdx/)
-//   components.keys().map(name => components(name))
-// }
-
-// configure(loaderFn, module)
-
-// configure(() => {
-//   // require('./style/index.css')
-//   // require.context('./assets', true)
-//   require.context('../src', true, /\.stories\.mdx$/)
-// }, module)
-
 require('./style/index.css')
 
-configure(require.context('../src', true, /\.stories\.mdx$/), module)
+configure([
+  require.context('./stories', true, /\.stories\.mdx$/),
+  require.context('../src', true, /\.stories\.mdx$/)
+], module)

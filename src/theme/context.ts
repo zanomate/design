@@ -1,10 +1,8 @@
 import React from 'react'
-import Color from '../typography/Color'
-
-export type ThemeColors = Record<Color, string>
+import { ColorSet } from 'typography/ColorSet'
 
 export interface ThemeSettings {
-  colors?: Partial<ThemeColors>
+  colors?: Partial<ColorSet>
 }
 
 export const ThemeContext = React.createContext<ThemeSettings>(null)
