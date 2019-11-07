@@ -1,13 +1,14 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../../index'
+import { Component } from '../Component'
 
-interface ContainerProps {
+interface ButtonProps {
   background: string
   color: string
 }
 
-const Container = styled.div<ContainerProps>`
+const Container = styled.div<ButtonProps>`
   display: inline-block;
   width: 150px;
   height: 30px;
@@ -15,7 +16,7 @@ const Container = styled.div<ContainerProps>`
   color: ${p => p.color}
 `
 
-const Button: FC<ContainerProps> = ({ children, background, color }) => {
+const Button: Component<ButtonProps> = ({ children, background, color }) => {
   const { colors } = useTheme()
   return (
     <Container

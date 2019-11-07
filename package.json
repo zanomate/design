@@ -15,7 +15,7 @@
     "clean": "rimraf lib",
     "rollup": "rollup -c",
     "build": "npm run clean && npm run rollup",
-    "storybook": "start-storybook -p 9009"
+    "story": "start-storybook -p 9009"
   },
   "peerDependencies": {
     "react": "^16.10.2",
@@ -30,17 +30,27 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "@babel/preset-typescript": "^7.7.0",
-    "@storybook/react": "^5.1.11",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-docs": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-options": "^5.2.5",
+    "@storybook/addon-viewport": "^5.2.5",
+    "@storybook/preset-typescript": "^1.1.0",
+    "@storybook/react": "^5.2.5",
     "@types/styled-components": "^4.1.20",
     "@typescript-eslint/parser": "^2.6.1",
     "@zanomate/eslint-config": "^0.4.9",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
+    "react-docgen-typescript-loader": "^3.3.0",
+    "react-is": "^16.11.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.26.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-typescript2": "^0.25.2",
+    "ts-loader": "^6.2.1",
     "typescript": "^3.7.2"
   }
 }
