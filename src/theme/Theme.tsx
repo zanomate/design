@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { ThemeContext, ThemeSettings } from './context'
 import { defaultColors } from './default/colors'
 
-const defaultTheme: ThemeSettings = { colors: defaultColors }
+export const defaultTheme: ThemeSettings = { colors: defaultColors }
 
 const Theme: FC<ThemeSettings> = ({ children, ...otherProps }) => (
   <ThemeContext.Provider value={{ ...defaultTheme, ...otherProps }}>
