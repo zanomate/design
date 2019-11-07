@@ -4,26 +4,14 @@ import { withKnobs } from '@storybook/addon-knobs'
 addDecorator(withKnobs)
 
 addParameters({
-  // options: {
-  //   name: 'Zanomate Design',
-  //   goFullScreen: false,
-  //   showStoriesPanel: true,
-  //   showAddonPanel: true,
-  //   showSearchBox: true,
-  //   addonPanelInRight: true,
-  //   hierarchySeparator: '.',
-  //   hierarchyRootSeparator: null
-  // }
-
   options: {
+    name: 'Zanomate Design',
     showPanel: true,
     panelPosition: 'right',
-    // https://storybook.js.org/docs/configurations/theming/
-    // theme,
   },
   knobs: {
-    escapeHTML: false,
-  },
+    escapeHTML: false
+  }
 })
 
 // const loaderFn = () => {
@@ -37,5 +25,13 @@ addParameters({
 // }
 
 // configure(loaderFn, module)
+
+// configure(() => {
+//   // require('./style/index.css')
+//   // require.context('./assets', true)
+//   require.context('../src', true, /\.stories\.mdx$/)
+// }, module)
+
+require('./style/index.css')
 
 configure(require.context('../src', true, /\.stories\.mdx$/), module)
