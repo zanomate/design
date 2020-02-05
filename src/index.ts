@@ -1,5 +1,5 @@
-import { ColorSet } from './typography/ColorSet'
-import Button from './components/input/Button'
+import { ColorSet } from 'theme/ColorSet'
+import Button from 'components/dataEntry/Button'
 import Theme from './theme/Theme'
 import useTheme from './theme/useTheme'
 

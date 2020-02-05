@@ -11,6 +11,7 @@ const Container = styled.div`
   margin: 8px;
   background-color: ${p => p.color};
   color: ${p => p.color};
+  border-radius: 16px;
 `
 
 const Text = styled.span`

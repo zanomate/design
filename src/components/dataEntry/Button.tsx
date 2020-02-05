@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useTheme } from '../../index'
-import { Component } from '../Component'
+import { useTheme } from 'index'
+import { Component } from 'types/Component'
 
 interface ButtonProps {
   background: string

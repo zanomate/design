@@ -1,13 +1,32 @@
-import React, { FC } from 'react'
-import { ThemeContext, ThemeSettings } from './context'
-import { defaultColors } from './default/colors'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { defaultFonts, Fonts } from 'design/fonts'
+import { Component } from 'types/Component'
+import { Colors, defaultColors } from 'design/colors'
 
-export const defaultTheme: ThemeSettings = { colors: defaultColors }
+export interface ThemeConfig {
+  colors?: Partial<{ [colorName in keyof Colors]: string }>
+  fonts?: Partial<{ [fontName in keyof Fonts]: string }>
+}
 
-const Theme: FC<ThemeSettings> = ({ children, ...otherProps }) => (
-  <ThemeContext.Provider value={{ ...defaultTheme, ...otherProps }}>
-    {children}
-  </ThemeContext.Provider>
-)
+export const defaultTheme: ThemeConfig = {
+  colors: defaultColors,
+  fonts: defaultFonts
+}
+
+export interface ThemeProps {
+  config: ThemeConfig
+}
+
+const Theme: Component<ThemeProps> = props => {
+  const { config, children } = props
+  return (
+    <ThemeProvider theme={{ ...defaultTheme, ...config }}>
+      <>
+        {children}
+      </>
+    </ThemeProvider>
+  )
+}
 
 export default Theme

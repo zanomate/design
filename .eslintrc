@@ -2,5 +2,9 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "extends": "@zanomate"
+  "extends": "@zanomate",
+  "rules": {
+    "linebreak-style": "off",
+    "@typescript-eslint/no-magic-numbers": "off"
+  }
 }
