@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { defaultFonts, Fonts } from 'design/fonts'
-import { Component } from 'types/Component'
+import { Comp } from 'types/Comp'
 import { Colors, defaultColors } from 'design/colors'
 
 export interface ThemeConfig {
@@ -18,7 +18,7 @@ export interface ThemeProps {
   config: ThemeConfig
 }
 
-const Theme: Component<ThemeProps> = props => {
+const Theme: Comp<ThemeProps> = props => {
   const { config, children } = props
   return (
     <ThemeProvider theme={{ ...defaultTheme, ...config }}>

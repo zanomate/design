@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { Component } from 'types/Component'
+import { Comp } from 'types/Comp'
 import { borderStyle } from 'design/borders'
 
 export type InputChildren = (value: string) => Element
@@ -14,7 +14,7 @@ const Container = styled.input`
   ${borderStyle}
 `
 
-export const Input: Component<InputProps> = props => {
+export const Input: Comp<InputProps> = props => {
   const { placeholder, children, ...otherProps } = props
   return (
     <Container {...otherProps}>

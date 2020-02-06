@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from 'index'
-import { Component } from 'types/Component'
+import { Comp } from 'types/Comp'
 
 interface ButtonProps {
   background: string
@@ -16,7 +16,7 @@ const Container = styled.div<ButtonProps>`
   color: ${p => p.color}
 `
 
-const Button: Component<ButtonProps> = ({ children, background, color }) => {
+const Button: Comp<ButtonProps> = ({ children, background, color }) => {
   const { colors } = useTheme()
   return (
     <Container
