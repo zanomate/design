@@ -10,7 +10,7 @@ import { useState } from 'react'
  */
 const useTimeout = (delay: number): [boolean, () => void] => {
   const [isExpired, setIsExpired] = useState(false)
-  let timeout
+  let timeout: NodeJS.Timeout
 
   const resetTimeout = () => {
     clearTimeout(timeout)

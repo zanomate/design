@@ -1,11 +1,13 @@
 import { addDecorator, addParameters, configure } from '@storybook/react'
 import { withKnobs } from '@storybook/addon-knobs'
+import withContext from './store/withContext'
 
 addDecorator(withKnobs)
+addDecorator(withContext)
 
 addParameters({
   options: {
-    name: 'Zanomate Design',
+    name: 'Z Design',
     showPanel: true,
     panelPosition: 'right',
   },
@@ -14,9 +16,13 @@ addParameters({
   }
 })
 
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext)
+}
+
 require('./style/index.css')
 
-configure([
-  require.context('./stories', true, /\.stories\.mdx$/),
-  require.context('../src', true, /\.stories\.mdx$/)
-], module)
+configure(() => {
+  requireAll(require.context('../src', true, /_stories\.js$/))
+  requireAll(require.context('../src', true, /\.story\.jsx$/))
+}, module)

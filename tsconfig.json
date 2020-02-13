@@ -1,23 +1,21 @@
 {
   "compilerOptions": {
-    "module": "es2015",
     "target": "es5",
-    "lib": [
-      "es2015",
-      "dom"
-    ],
-    "baseUrl": "./src",
-    "outDir": "./lib",
+    "module": "commonjs",
+    "baseUrl": "./src/",
+    "outDir": "./lib/",
+    "declarationDir": "./lib/types",
+    "allowJs": true,
+    "strict": true,
     "sourceMap": true,
     "declaration": true,
-    "declarationDir": "./lib/types",
     "experimentalDecorators": true,
-    "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "preserveConstEnums": true,
     "removeComments": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "jsx": "react",
     "types": [
       "node"
     ],

@@ -1,32 +1,38 @@
-import React from 'react'
-import { ThemeProvider } from 'styled-components'
-import { defaultFonts, Fonts } from 'design/fonts'
-import { Comp } from 'types/Comp'
-import { Colors, defaultColors } from 'design/colors'
+import merge from 'lodash/merge'
+import React, { FC } from 'react'
+import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
+import { basicColors, Colors, defaultColors } from '../design/color'
+import { defaultFonts, Fonts } from '../design/font'
 
-export interface ThemeConfig {
-  colors?: Partial<{ [colorName in keyof Colors]: string }>
-  fonts?: Partial<{ [fontName in keyof Fonts]: string }>
+export interface Theme {
+  colors: Colors
+  fonts: Fonts
 }
 
-export const defaultTheme: ThemeConfig = {
-  colors: defaultColors,
+export interface ThemeConfig {
+  colors?: Partial<Colors>
+  fonts?: Partial<Fonts>
+}
+
+export const defaultTheme: Theme = {
+  colors: { ...basicColors, ...defaultColors },
   fonts: defaultFonts
 }
 
 export interface ThemeProps {
-  config: ThemeConfig
+  config: Theme
 }
 
-const Theme: Comp<ThemeProps> = props => {
+const ThemeProvider: FC<ThemeProps> = props => {
   const { config, children } = props
+  const theme = merge(defaultTheme, config)
   return (
-    <ThemeProvider theme={{ ...defaultTheme, ...config }}>
+    <StyledComponentsThemeProvider theme={theme}>
       <>
         {children}
       </>
-    </ThemeProvider>
+    </StyledComponentsThemeProvider>
   )
 }
 
-export default Theme
+export default ThemeProvider

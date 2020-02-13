@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 
 export interface ContainerProps {
   children?: React.ReactChildren
@@ -12,5 +12,3 @@ export interface StylizableProps {
   style?: object
   className?: string
 }
-
-export type Comp<T> = FC<T>

@@ -1,11 +1,10 @@
-import React from 'react'
 import { motion } from 'framer-motion'
-import Spinner, { SpinnerProps } from 'components/feedback/spinner/Spinner'
-import { Comp } from 'types/Comp'
+import React, { FC } from 'react'
+import Spinner, { SpinnerProps } from './Spinner'
 
 export type LinearSpinnerProps = Omit<SpinnerProps, 'children'>
 
-const LinearSpinner: Comp<LinearSpinnerProps> = props => {
+const LinearSpinner: FC<LinearSpinnerProps> = props => {
   return (
     <Spinner {...props}>
       {({ size, spinning }) => (

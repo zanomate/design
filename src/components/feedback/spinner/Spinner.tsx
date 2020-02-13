@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
-import { Comp, ExtendibleProps, StylizableProps } from 'types/Comp'
-import useTimeout from 'utils/hooks/useTimeout'
+import { ExtendibleProps, StylizableProps } from '../../../types/Comp'
+import useTimeout from '../../../utils/hooks/useTimeout'
 
 export enum SpinnerSize {
   SMALL = 'small',
@@ -31,7 +31,7 @@ const Container = styled.div`
   align-items: center;
 `
 
-const Spinner: Comp<SpinnerProps> = props => {
+const Spinner: FC<SpinnerProps> = props => {
   const { delay, size, spinning, children } = props
   const [delayExpired, resetDelay] = useTimeout(delay)
 
