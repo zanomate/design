@@ -5,7 +5,7 @@ export interface ContainerProps {
 }
 
 export interface ExtendibleProps<P> {
-  children: (params: P) => React.ReactElement
+  children?: React.ReactChildren | ((params: P) => any)
 }
 
 export interface StylizableProps {

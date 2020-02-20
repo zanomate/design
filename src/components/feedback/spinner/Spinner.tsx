@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react'
 import styled from 'styled-components'
-import { ExtendibleProps, StylizableProps } from '../../../types/Comp'
+import { ExtendibleProps, StylizableProps } from '../../../types/props'
 import useTimeout from '../../../utils/hooks/useTimeout'
 
 export enum SpinnerSize {
@@ -37,12 +37,19 @@ const Spinner: FC<SpinnerProps> = props => {
 
   useEffect(() => resetDelay(), [spinning])
 
-  return (
-    <Container>
-      {children({
+  const renderChildren = () => {
+    if (typeof children === 'function') {
+      return children({
         size: size,
         spinning: delayExpired && spinning
-      })}
+      })
+    }
+    return children
+  }
+
+  return (
+    <Container>
+      {renderChildren()}
     </Container>
   )
 }

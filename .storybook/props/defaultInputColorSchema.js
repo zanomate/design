@@ -1,10 +1,11 @@
 import Color from '../../src/design/color'
 
 const defaultInputColorSchema = {
-  background: Color.WHITE,
-  border: Color.GREY_SUPER_DARK,
-  content: Color.GREY_SUPER_DARK,
-  details: Color.SECONDARY_CAUTION
+  base: Color.BASE,
+  contrast: Color.GREY_ULTRA_DARK,
+  details: Color.GREY_LIGHT,
+  shadow: Color.GREY_ULTRA_LIGHT,
+  emphasis: Color.PRIMARY_STANDARD
 }
 
 export default defaultInputColorSchema

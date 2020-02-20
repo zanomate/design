@@ -5,6 +5,8 @@
   "extends": "@zanomate",
   "rules": {
     "@typescript-eslint/no-extra-parens": "off",
-    "no-undefined": "off"
+    "max-len": ["warn", 120],
+    "no-undefined": "off",
+    "object-curly-newline": "off"
   }
 }
