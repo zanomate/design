@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { boolean } from '@storybook/addon-knobs'
 import Responsive from './Responsive'
-import { placeholderBorder, placeholderBackground } from '../../../../.storybook/utils/placeholders'
+import { borderPlaceholder, backgroundPlaceholder } from '../../../../.storybook/utils/placeholders'
 import Space from '../Space/Space'
 
 const CustomResponsive = styled(Responsive)`
-  border: ${placeholderBorder};
-  background: ${placeholderBackground}
+  border: ${borderPlaceholder};
+  background: ${backgroundPlaceholder}
 `
 
 const ResponsiveStory = () => {

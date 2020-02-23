@@ -8,10 +8,10 @@ import Row from '../Row/Row'
 import Space from '../Space/Space'
 import colSize from '../../../../.storybook/knobs/colSize'
 import optionsWithUndef from '../../../../.storybook/knobs/optionsWithUndef'
-import { placeholderBackground, placeholderBorder, placeholderColor } from '../../../../.storybook/utils/placeholders'
+import { backgroundPlaceholder, borderPlaceholder, colorPlaceholder } from '../../../../.storybook/utils/placeholders'
 
 const CustomResponsive = styled(Responsive)`
-  background: ${placeholderBackground};
+  background: ${backgroundPlaceholder};
 `
 
 const CustomRow = styled(Row)`
@@ -19,11 +19,11 @@ const CustomRow = styled(Row)`
 `
 
 const CustomCol = styled(Col)`
-  border: ${placeholderBorder};
+  border: ${borderPlaceholder};
 `
 
 const CustomSpace = styled(Space)`
-  background: ${placeholderColor};
+  background: ${colorPlaceholder};
   margin-left: auto;
   margin-right: auto;
 `
