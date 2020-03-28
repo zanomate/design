@@ -28,6 +28,7 @@ const responsiveContainer = css`
 `
 
 const Container = styled.div<ResponsiveContainerProps>`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -5,6 +5,7 @@ import size from '../../../design/size'
 import { Breakpoint, minWidth } from '../../../design/breakpoints'
 
 const Container = styled.div<ColContainerProps>`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: ${p => p.vAlign};
@@ -18,37 +19,41 @@ const Container = styled.div<ColContainerProps>`
     margin-bottom: ${p => size(p.gutters)};
   }
   
+  ${p => p.size && css`
+    width: calc(100% / 24 * ${p.size});
+  `}
+  
   ${p => p.xs && css`
-    width: calc(5% * ${p.xs});
+    width: calc(100% / 24 * ${p.xs});
   `}
   
   ${p => p.sm && css`
     @media screen and (min-width: ${minWidth(Breakpoint.SM)}px) {
-      width: calc(5% * ${p.sm});
+      width: calc(100% / 24 * ${p.sm});
     }
   `}
   
   ${p => p.md && css`
     @media screen and (min-width: ${minWidth(Breakpoint.MD)}px) {
-      width: calc(5% * ${p.md});
+      width: calc(100% / 24 * ${p.md});
     }
   `}
   
   ${p => p.lg && css`
     @media screen and (min-width: ${minWidth(Breakpoint.LG)}px) {
-      width: calc(5% * ${p.lg});
+      width: calc(100% / 24 * ${p.lg});
     }
   `}
   
   ${p => p.xl && css`
     @media screen and (min-width: ${minWidth(Breakpoint.XL)}px) {
-      width: calc(5% * ${p.xl});
+      width: calc(100% / 24 * ${p.xl});
     }
   `}
   
   ${p => p.xxl && css`
     @media screen and (min-width: ${minWidth(Breakpoint.XXL)}px) {
-      width: calc(5% * ${p.xxl});
+      width: calc(100% / 24 * ${p.xxl});
     }
   `}
 `

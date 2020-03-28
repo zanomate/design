@@ -4,6 +4,7 @@
   },
   "extends": "@zanomate",
   "rules": {
+    "linebreak-style": "off",
     "@typescript-eslint/no-extra-parens": "off",
     "max-len": ["warn", 120],
     "no-undefined": "off",

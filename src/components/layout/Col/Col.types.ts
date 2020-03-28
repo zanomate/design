@@ -15,6 +15,7 @@ export enum ColVAlign {
 export interface ColProps extends ContainerProps, StylizableProps {
   gutters?: number
   vAlign?: ColVAlign
+  size?: ColSize
   xs?: ColSize
   sm?: ColSize
   md?: ColSize
@@ -26,6 +27,7 @@ export interface ColProps extends ContainerProps, StylizableProps {
 export interface ColContainerProps {
   gutters: number
   vAlign?: ColVAlign
+  size?: ColSize
   xs?: ColSize
   sm?: ColSize
   md?: ColSize

@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import size from '../../../design/size'
 import { SectionContainerProps, SectionProps } from './Section.props'
+import size from '../../../design/size'
 
 const Container = styled.div<SectionContainerProps>`
   margin-top: ${p => size(p.top)};

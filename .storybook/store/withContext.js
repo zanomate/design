@@ -4,16 +4,18 @@ import ThemeProvider from '../../src/theme/Theme'
 import Layout from '../../src/components/layout/Layout/Layout'
 import themed from '../../src/theme/themed'
 import Color from '../../src/design/color'
-import size from '../../src/design/size'
+import { select } from '@storybook/addon-knobs'
 
 const StoryLayout = styled(Layout)`
-  padding-top: ${size(24)};
   background: ${themed.color(Color.GREY_ULTRA_LIGHT)};
 `
 
 const withContext = (Story) => {
+
+  const config = select('theme', { 'Default': null }, null, 'config')
+
   return (
-    <ThemeProvider>
+    <ThemeProvider config={config}>
       <StoryLayout>
         <Story />
       </StoryLayout>

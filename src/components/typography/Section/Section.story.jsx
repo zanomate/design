@@ -1,19 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
 import { storiesOf } from '@storybook/react'
 import Centered from './Centered'
 import Justified from './Justified'
 import Section from './Section'
 import {
-  borderPlaceholder, otherParagraphPlaceholder, paragraphPlaceholder
+  borderPlaceholder,
+  otherParagraphPlaceholder,
+  paragraphPlaceholder
 } from '../../../../.storybook/utils/placeholders'
 import dimension from '../../../../.storybook/knobs/dimension'
 
 const stories = storiesOf('typography|Section', module)
-
-const CustomSection = styled(Section)`
-  border: ${borderPlaceholder};
-`
 
 stories.add('Section', () => {
   const props = {
@@ -24,11 +21,11 @@ stories.add('Section', () => {
     bottom: dimension('bottom', undefined, 'props', true)
   }
   return (
-    <CustomSection {...props}>
+    <Section {...props} style={{ border: borderPlaceholder }}>
       {paragraphPlaceholder}
       <br />
       {otherParagraphPlaceholder}
-    </CustomSection>
+    </Section>
   )
 })
 

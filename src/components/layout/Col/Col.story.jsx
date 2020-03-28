@@ -30,6 +30,7 @@ const CustomSpace = styled(Space)`
 
 const ColStory = () => {
   const props = {
+    size: colSize('size', 'props'),
     xs: colSize('xs', 'props'),
     sm: colSize('sm', 'props'),
     md: colSize('md', 'props'),
@@ -37,7 +38,7 @@ const ColStory = () => {
     xl: colSize('xl', 'props'),
     xxl: colSize('xxl', 'props'),
     gutters: number('gutters', 4, { min: 0 }, 'props'),
-    vAlign: optionsWithUndef('vAlign', ColVAlign, ColVAlign.TOP, 'props')
+    vAlign: optionsWithUndef('vAlign', ColVAlign, undefined, 'props')
   }
   return (
     <CustomResponsive fluid>

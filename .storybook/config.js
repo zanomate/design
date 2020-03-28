@@ -23,6 +23,6 @@ function requireAll(requireContext) {
 require('./style/index.css')
 
 configure(() => {
-  requireAll(require.context('../src', true, /_stories\.js$/))
+  requireAll(require.context('../src', true, /stories\.js$/))
   requireAll(require.context('../src', true, /\.story\.jsx$/))
 }, module)

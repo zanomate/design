@@ -1,9 +1,9 @@
 import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
-import { eslint } from 'rollup-plugin-eslint'
-import typescript from 'rollup-plugin-typescript2'
+import typescript2 from 'rollup-plugin-typescript2'
 
-import pkg from './package.json'
+const typescript = require('typescript')
+const pkg = require('./package.json')
 
 const libraryName = 'design'
 const globalLibs = Object.keys(pkg.dependencies)
@@ -28,14 +28,16 @@ export default {
     postcss({
       modules: true
     }),
-    eslint({
-      include: './src/**/*.tsx?'
-    }),
-    typescript({
+    typescript2({
       clean: true,
-      typescript: require('typescript'),
+      typescript: typescript,
       verbosity: 0,
-      useTsconfigDeclarationDir: true
+      useTsconfigDeclarationDir: true,
+      tsconfigOverride: {
+        compilerOptions: {
+          module: "es2015"
+        }
+      }
     }),
     commonjs({
       include: 'node_modules/**'

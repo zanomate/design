@@ -4,12 +4,13 @@ import { RowContainerProps, RowJustify, RowProps } from './Row.types'
 import size from '../../../design/size'
 
 const Container = styled.div<RowContainerProps>`
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: ${p => p.justify};
   align-items: stretch;
   
-  & > div:not(:last-child) {
+  & > div {
     padding-left: ${p => size(p.gutters)};
     padding-right: ${p => size(p.gutters)};
   }

@@ -10,6 +10,16 @@ export const backgroundPlaceholder = `
   )
 `
 
+export const otherBackgroundPlaceholder = `
+  repeating-linear-gradient(
+    45deg,
+    #2b2b2b,
+    #2b2b2b 10px,
+    #424242 10px,
+    #424242 20px
+  )
+`
+
 export const borderPlaceholder = '2px solid #f99'
 
 export const otherBorderPlaceholder = '2px solid #99f'
